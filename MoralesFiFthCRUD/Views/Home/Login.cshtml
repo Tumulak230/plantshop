@@ -1,0 +1,42 @@
+﻿@model MoralesFiFthCRUD.User
+
+@{
+    ViewBag.Title = "Login";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container-fluid h-100 d-flex justify-content-center align-items-center">
+        <div class="Login">
+            <div class="form-horizontal">
+
+                <h2 class="text-center">tutorIT</h2>
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-12 text-center">
+                        @Html.LabelFor(model => model.username)
+                        @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control", @required = true } })
+                        @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12 text-center">
+                        @Html.LabelFor(model => model.password)
+                        @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", @type = "Password", @required = true } })
+                        @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12 text-center">
+                        <input type="submit" value="Login" class="btn btn-primary btn-block btn-large" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<link rel="stylesheet" href="~/Content/login.css" />

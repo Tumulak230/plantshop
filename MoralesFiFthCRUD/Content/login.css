@@ -1,0 +1,35 @@
+﻿html, body {
+    height: 100%;
+    width: 100%;
+    background-image: url('../Resors/login.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+}
+
+.container-fluid {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-horizontal {
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
+    padding: 20px; /* Add padding for better spacing */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Adjust as needed */
+}
+
+.form-control, .btn {
+    width: 100%;
+}
+
+.btn {
+    max-width: 300px; /* Adjust as needed */
+    margin-top: 15px; /* Add margin to the button */
+}

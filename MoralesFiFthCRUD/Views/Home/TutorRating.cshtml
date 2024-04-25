@@ -1,0 +1,186 @@
+﻿@{
+    ViewBag.Title = "TutorRating";
+}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Rating</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <style>
+            body {
+                height: 100vh;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                background-image: url('../Resors/Desktop - 10.png');
+                background-size: cover;
+                background-position: center;
+                color: #fff;
+                font-size: 2rem;
+                box-sizing: border-box;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+                text-decoration: none;
+            }
+
+            header {
+                width: 100%;
+                height: 70px;
+                padding: 30px 5px;
+                box-sizing: border-box;
+            }
+
+            nav {
+                font-size: 15px;
+                font-family: Arial;
+                float: right;
+            }
+
+                nav a {
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    color: #fff; /* Added to change link color */
+                    text-decoration: none; /* Added to remove underline */
+                }
+
+            .container {
+                padding-top: 20px;
+            }
+
+            .panel {
+                margin-bottom: 20px;
+                background-color: #87CEEB;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            .panel-title {
+                font-size: 20px;
+                margin-bottom: 15px;
+                color: black;
+            }
+
+            .panel-body {
+                padding: 20px;
+                overflow: hidden;
+                text-align: center; /* Added to center the image */
+            }
+
+                .panel-body .image-box {
+                    width: 200px;
+                    height: 200px;
+                    background-color: #ddd;
+                    border-radius: 50%;
+                    margin: 0 auto;
+                }
+
+            .next-page-buttons {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+                .next-page-buttons button {
+                    margin-right: 10px;
+                }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="#" class="contact">Contact Us</a>|
+                <a href="#" class="about">About</a>
+            </nav>
+        </header>
+
+        <div class="container">
+            <h2 style="color: black">RATING</h2>
+            <!-- Tutor Information -->
+            <div id="tutor-info" class="panel panel-default">
+                <div class="panel-heading">
+                </div>
+                <br />
+                <div class="panel-body">
+                    <div class="image-box"></div>
+                    <p><strong>Name:</strong> Mike</p>
+                    <p><strong>Language:</strong> JAVASCRIPT</p>
+                    <p><strong>Location:</strong> PUROK RAMBO</p>
+                </div>
+                <div class="comment-buttons">
+                    <button id="comment-button" class="btn btn-primary" onclick="submitWidgets('comment')">COMMENT</button>
+                    <button id="review-button" class="btn btn-primary" onclick="submitWidgets('review')">REVIEW</button>
+                    <button id="review-button" class="btn btn-primary" onclick="submitWidgets('review')">★ TUTOR RATING</button>
+                </div>
+            </div>
+            <div id="tutor-info" class="panel panel-default">
+                <div class="panel-heading">
+ 
+                </div>
+                <br />
+                <div class="panel-body">
+                    <div class="image-box"></div>
+                    <p><strong>Name:</strong> John</p>
+                    <p><strong>Language:</strong>C++</p>
+                    <p><strong>Location:</strong>CORDOVA</p>
+                </div>
+                <div class="comment-buttons">
+                    <button id="comment-button" class="btn btn-primary" onclick="submitWidgets('comment')">COMMENT</button>
+                    <button id="review-button" class="btn btn-primary" onclick="submitWidgets('review')">REVIEW</button>
+                    <button id="review-button" class="btn btn-primary" onclick="submitWidgets('review')">★ TUTOR RATING</button>
+                </div>
+            </div>
+            <div id="tutor-info" class="panel panel-default">
+                <div class="panel-heading">
+                </div>
+                <br />
+                <div class="panel-body">
+                    <div class="image-box"></div>
+                    <p><strong>Name:</strong>Brixter</p>
+                    <p><strong>Language:</strong>HTML</p>
+                    <p><strong>Location:</strong>Japan</p>
+                </div>
+                <div class="comment-buttons">
+                    <button id="comment-button" class="btn btn-primary" onclick="submitWidgets('comment')">COMMENT</button>
+                    <button id="review-button" class="btn btn-primary" onclick="submitWidgets('review')">REVIEW</button>
+                    <button id="review-button" class="btn btn-primary" onclick="submitWidgets('review')">★ TUTOR RATING</button>
+                </div>
+            </div>
+            <div id="tutor-info" class="panel panel-default">
+                <div class="panel-heading">
+
+                </div>
+                <br />
+                <div class="panel-body">
+                    <div class="image-box"></div>
+                    <p><strong>Name:</strong>Nino</p>
+                    <p><strong>Language:</strong>PYTHON</p>
+                    <p><strong>Location:</strong>Japan</p>
+                </div>
+                <div class="comment-buttons">
+                    <button id="comment-button" class="btn btn-primary" onclick="submitWidgets('comment')">COMMENT</button>
+                    <button id="review-button" class="btn btn-primary" onclick="submitWidgets('review')">REVIEW</button>
+                    <button id="review-button" class="btn btn-primary" onclick="submitWidgets('review')">★ TUTOR RATING</button>
+                </div>
+            </div>
+            <!-- Next Page Buttons -->
+            <div class="next-page-buttons">
+                <button id="back-button" class="btn btn-primary" onclick="submitWidgets('back')">BACK</button>
+                <button id="home-button" class="btn btn-primary" onclick="submitWidgets('home')">HOME</button>
+            </div>
+        </div>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script>
+        function submitWidgets(action) {
+            // Perform actions when the buttons are clicked
+            // You can add your logic here
+            if (action === 'back') {
+                // Code to go back to the previous page
+                console.log("Going back");
+            } else if (action === 'home') {
+                // Code to go to the home page
+                console.log("Going home");
+            }
+        }
+        </script>
+    </body>
+</html>

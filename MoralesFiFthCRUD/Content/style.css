@@ -1,0 +1,91 @@
+﻿* {
+    color: #fff;
+    font-size: 2rem;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    text-decoration: none;
+}
+
+body {
+    height: 150vh;
+    width: 100%;
+    background-image: url('../Resors/Desktop - 10.png');
+    background-size: cover;
+    background-position: center;
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+
+}
+
+header {
+    width: 100%;
+    height: 70px; /* Adjust header height as needed */
+     /* Semi-transparent background */
+    padding: 30px 5px; /* Add some padding for space */
+    box-sizing: border-box; /* Ensure padding and border are included in the width/height */
+    margin-top:0;
+}
+
+nav {
+    float: right; /* Float the navigation to the right */
+}
+
+nav a {
+    margin-left: 10px;
+    margin-right:10px; /* Add some space between navigation links */
+}
+
+
+.centered-container {
+   position:absolute;
+   top:80%;
+   left:45%;
+   transform:translate(-30%,-30%);
+    display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 350px;
+   margin-left:-30px;
+}
+
+.centered-container button {
+  
+    margin: 0 5px;
+    padding: 15px 25px;
+    background-color: #F3C397;
+    border: none;
+    color: #000000;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius:25px;
+    
+}
+
+.centered-container button:hover {
+    background-color: #F3C397;
+
+}
+footer {
+    position: absolute;
+    bottom: -300px;
+    width: 90%;
+    height:40%;
+    background-color: rgba(204, 255, 204, 0.5); /* Semi-transparent background */
+    box-sizing: border-box; /* Ensure padding and border are included in the width/height */
+    
+}
+.footer-content {
+    padding: 1px 20px; /* Add padding to the new container */
+}
+
+.footer-content h2  {
+    font-size: 10px; /* Adjust font size for headings */
+     color: #000000;
+}
+
+.footer-content p {
+    font-size: 15px; /* Adjust font size for paragraphs */
+    line-height: 1.5; /* Adjust line height for better readability */
+     color: #000000;
+}
+

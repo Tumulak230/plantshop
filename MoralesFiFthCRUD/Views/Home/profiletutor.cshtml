@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "profiletutor";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>client</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body {
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-image: url('../Resors/Desktop - 10.png');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            font-size: 2rem;
+            box-sizing: border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+            text-decoration: none;
+        }
+
+        header {
+            width: 100%;
+            height: 70px;
+            padding: 30px 5px;
+            box-sizing: border-box;
+        }
+
+        nav {
+            font-size: 15px;
+            font-family: Arial;
+            float: right;
+        }
+
+            nav a {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+        .container {
+            padding-top: 20px;
+        }
+
+        .panel {
+            margin-bottom: 20px;
+            background-color: #87CEEB;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .panel-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: black;
+        }
+
+        .panel-body {
+            padding: 20px;
+            overflow: hidden;
+            text-align: center; /* Added to center the image */
+        }
+
+            .panel-body .image-box {
+                width: 200px;
+                height: 200px;
+                background-color: #ddd;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+
+        .next-page-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="contact">Contact Us</a>|
+            <a href="#" class="about">About</a>
+        </nav>
+    </header>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="container">
+        <h2 style="color: black">Tutor Profile</h2>
+        <!-- Tutor Container -->
+        <div id="tutor-widget" class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Tutor</h3>
+            </div>
+            <div class="panel-body">
+                <div class="image-box"></div>
+                <p><strong>Name:</strong>Nino</p>
+                <!-- Add content for Tutor widget -->
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-primary" onclick="viewPersonalInfo('tutor')">View Personal Info</button>
+            </div>
+        </div>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script>
+        function viewPersonalInfo(type) {
+            // Perform actions to view personal information based on the type (client or tutor)
+            // You can add your logic here
+             if (type === 'tutor') {
+                // Code to view tutor's personal information
+                console.log("Viewing tutor's personal information");
+            }
+        }
+            function submitWidgets(action) {
+                // Perform actions when the buttons are clicked
+                // You can add your logic here
+                if (action === 'back') {
+                    // Code to go back to the previous page
+                    console.log("Going back");
+                } else if (action === 'home') {
+                    // Code to go to the home page
+                    console.log("Going home");
+                }
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Shop</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            background-color: #155724; /* Dark green */
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        .container {
+            padding-top: 20px;
+        }
+
+        .card {
+            border: none;
+            transition: box-shadow 0.3s ease;
+        }
+
+            .card:hover {
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+        .card-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+            .card-image img {
+                width: 100%;
+                height: auto;
+                transition: transform 0.3s ease;
+            }
+
+        .card:hover .card-image img {
+            transform: scale(1.1);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        .btn-shop {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            font-size: 16px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-shop:hover {
+                background-color: #218838;
+            }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Plant Shop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h4 class="my-4">Featured Products</h4>
+            </div>
+            <div class="col-md-4">
+                <!-- Search Bar -->
+                <form class="form-inline my-4 my-lg-0" onsubmit="searchProducts(event)">
+                    <input class="form-control mr-sm-2" type="search" id="searchInput" placeholder="Search for products..." aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <!-- Dropdown Categories -->
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categories
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#" onclick="displayPopularProducts()">Popular</a>
+                        <a class="dropdown-item" href="#" onclick="displayAllProducts()">All Products</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#" onclick="displayPlants()">Plants</a>
+                        <a class="dropdown-item" href="#" onclick="displayFertilizerProducts()">Fertilizer</a>
+                        <a class="dropdown-item" href="#" onclick="displaySoilProducts()">Soil</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Products -->
+        <div class="row mt-4" id="featuredProducts">
+            <!-- Products will be displayed dynamically here -->
+        </div>
+    </div>
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+    const allProducts = [
+        { name: "Monstera Deliciosa", category: "Plants", price: "$25.00" },
+        { name: "Snake Plant", category: "Plants", price: "$18.00" },
+        { name: "Fiddle Leaf Fig", category: "Plants", price: "$30.00" },
+        { name: "Fertilizer 1", category: "Fertilizer", price: "$10.00" },
+        { name: "Fertilizer 2", category: "Fertilizer", price: "$12.00" },
+        { name: "Fertilizer 3", category: "Fertilizer", price: "$15.00" },
+        { name: "Soil 1", category: "Soil", price: "$8.00" },
+        { name: "Soil 2", category: "Soil", price: "$10.00" },
+        { name: "Soil 3", category: "Soil", price: "$12.00" }
+    ];
+
+    // Display all products initially
+    displayAllProducts();
+
+    // Function to display products based on search query
+    function searchProducts(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const searchInput = document.getElementById("searchInput");
+        const searchTerm = searchInput.value.trim().toLowerCase();
+
+        const filteredProducts = allProducts.filter(product => {
+            return product.name.toLowerCase().includes(searchTerm);
+        });
+
+        displayProducts(filteredProducts);
+    }
+
+    // Function to display all products
+    function displayAllProducts() {
+        displayProducts(allProducts);
+    }
+
+    // Function to display popular products
+    function displayPopularProducts() {
+        const popularProducts = [
+            { name: "Monstera Deliciosa", category: "Plants", price: "$25.00" },
+            { name: "Snake Plant", category: "Plants", price: "$18.00" },
+            { name: "Fertilizer 1", category: "Fertilizer", price: "$10.00" },
+            { name: "Soil 1", category: "Soil", price: "$8.00" }
+        ];
+
+        displayProducts(popularProducts);
+    }
+
+    // Function to display plant products
+    function displayPlants() {
+        const plantProducts = allProducts.filter(product => product.category === "Plants");
+        displayProducts(plantProducts);
+    }
+
+    // Function to display fertilizer products
+    function displayFertilizerProducts() {
+        const fertilizerProducts = allProducts.filter(product => product.category === "Fertilizer");
+        displayProducts(fertilizerProducts);
+    }
+
+    // Function to display soil products
+    function displaySoilProducts() {
+        const soilProducts = allProducts.filter(product => product.category === "Soil");
+        displayProducts(soilProducts);
+    }
+
+    // Function to display products dynamically
+    function displayProducts(products) {
+        const productContainer = document.getElementById("featuredProducts");
+        productContainer.innerHTML = ""; // Clear previous products
+
+        products.forEach(product => {
+            const productCard = `
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/400x300" alt="Product Image">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">${product.name}</h5>
+                            <p class="card-text">Description goes here...</p>
+                            <p class="price">${product.price}</p>
+                            <button class="btn btn-shop">Shop Now</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            productContainer.innerHTML += productCard;
+        });
+    }
+    </script>
+
+</body>
+</html>

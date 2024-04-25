@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="506a149c6df6459596e2010ecd691b19" Name="Diagram1">
+        <EntityTypeShape EntityType="dbsys32Model.Role" Width="1.5" PointX="2.875" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbsys32Model.User" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbsys32Model.UserRole" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbsys32Model.vw_UserRole" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="dbsys32Model.FK_Role_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="dbsys32Model.FK_UserRole_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="dbsys32Model.FK_UserRole_User" ManuallyRouted="false" />
+        <AssociationConnector Association="dbsys32Model.FK_UserRole_UserRole" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
