@@ -1,4 +1,7 @@
-﻿<!doctype html>
+﻿@{
+    Layout = null;
+}
+<!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -13,6 +16,8 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f8f9fa;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
         }
 
         .navbar {
@@ -20,11 +25,11 @@
         }
 
         .navbar-brand, .navbar-nav .nav-link {
-            color: #28a745;
+            color: #fff;
         }
 
         .carousel-item {
-            height: 60vh; /* Adjust height as needed */
+            height: 100vh; /* Full viewport height */
             min-height: 300px;
             background: no-repeat center center;
             background-size: cover;
@@ -95,7 +100,7 @@
     <header>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active" style="background-image: url('https://www.w3schools.com/howto/img_forest.jpg')">
+                <div class="carousel-item active" style="background-image: url('https://www.w3schools.com/howto/img_forest.jpg');">
                     <div class="carousel-caption text-center">
                         <h1>Welcome to Plant Shop</h1>
                         <p>Find the perfect plants for your home</p>
@@ -110,7 +115,7 @@
         <div class="container">
             <h2 class="text-center mb-4">Our Services</h2>
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <div class="text-center mb-4">
                         <svg class="lnr services-icon">
                             <use xlink:href="#lnr-leaf"></use>
@@ -119,7 +124,7 @@
                         <p>Explore a wide variety of indoor and outdoor plants.</p>
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <div class="text-center mb-4">
                         <svg class="lnr services-icon">
                             <use xlink:href="#lnr-clock"></use>
@@ -128,7 +133,7 @@
                         <p>Get your plants delivered quickly and safely to your doorstep.</p>
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <div class="text-center mb-4">
                         <svg class="lnr services-icon">
                             <use xlink:href="#lnr-heart"></use>

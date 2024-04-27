@@ -226,7 +226,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Home\Dashboard.cshtml" />
     <Content Include="Views\Home\profileclient.cshtml" />
     <Content Include="Views\Home\profiletutor.cshtml" />
     <EntityDeploy Include="TutorModel.edmx">
@@ -241,6 +240,7 @@
     <Content Include="Views\Home\Shop.cshtml" />
     <Content Include="Views\Home\Blog.cshtml" />
     <Content Include="Views\Home\LandingPage.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
