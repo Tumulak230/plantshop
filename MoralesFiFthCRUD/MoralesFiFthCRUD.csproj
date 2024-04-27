@@ -134,6 +134,9 @@
     <Content Include="Content\Home.css" />
     <Content Include="Content\Landingpagestyle.css" />
     <Content Include="Content\login.css" />
+    <Content Include="Content\profileclient.css" />
+    <Content Include="Content\profiletutor.css" />
+    <Content Include="Content\SignUp.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\Styles.css" />
@@ -241,6 +244,7 @@
     <Content Include="Views\Home\Blog.cshtml" />
     <Content Include="Views\Home\LandingPage.cshtml" />
     <Content Include="Views\Home\Dashboard.cshtml" />
+    <Content Include="Views\Home\SignUp.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
