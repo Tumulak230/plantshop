@@ -1,0 +1,57 @@
+﻿  /* Reset body margin */
+        body {
+            margin: 0;
+            padding:0;
+        }
+
+        /* Style for the navigator */
+        .navigator {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: skyblue;
+            padding: 10px 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Style for the logo and title */
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Style for the logo */
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+
+        /* Style for the title */
+        .title {
+		    color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Style for the navigation list */
+        .nav-list {
+            display: flex;
+            list-style-type: none;
+            gap: 20px; /* Adjust the gap as needed */
+        }
+		 .nav-list a {
+            text-decoration: none; /* Removes underline from links */
+            color: black; /* Sets text color for links */
+        }
+		    .nav-list a:hover {
+            text-decoration: underline; /* Adds underline when hovered */
+            color: black; /* Ensures text color remains black */
+        }
+
+        /* Style for the list items */
+        .nav-item {
+            font-size: 20px;
+            cursor: pointer; /* Indicates a clickable item */
+        }

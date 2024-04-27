@@ -1,0 +1,84 @@
+﻿   body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            background-color: #155724; /* Dark green */
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #28a745;
+        }
+
+        .carousel-item {
+            height: 60vh; /* Adjust height as needed */
+            min-height: 300px;
+            background: no-repeat center center;
+            background-size: cover;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .services-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: #28a745; /* Green */
+        }
+
+        .card {
+            border: none;
+        }
+
+        .card-img-top {
+            height: 200px; /* Adjust image height */
+            object-fit: cover;
+        }
+
+        .card-title {
+            font-weight: bold;
+        }
+        .title {
+    color: #007bff; /* Blue color */
+        }
+
+.description {
+    color: #28a745; /* Green color */
+}
+.centered-container {
+   position:absolute;
+   top:70%;
+   left:50%;
+   transform:translate(-30%,-30%);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 350px;
+   margin-left:-30px;
+}
+
+.centered-container button {
+  
+    margin: 0 5px;
+    padding: 10px 15px;
+    background-color: #F3C397;
+    border: none;
+    color: #000000;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius:25px;
+    
+}
+
+.centered-container button:hover {
+    background-color: #F3C397;
+
+}
+.footer {
+    background-color: #90EE90; /* Light gray background color */
+    padding: 20px; /* Add padding for spacing */
+    text-align: center; /* Center text */
+    width: 100%; /* Set width to 100% */
+}
