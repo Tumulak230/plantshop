@@ -1,0 +1,21 @@
+﻿* {
+    color: #fff;
+    font-size: 2rem;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    text-decoration: none;
+}
+
+body {
+    height: 150vh;
+    width: 100%;
+    background-image: url('../Resors/planet9_Wallpaper_5000x2813.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+
+}
+.navb{
+    left:auto;
+}

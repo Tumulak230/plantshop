@@ -1,0 +1,57 @@
+﻿html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../Resors/plantshop.png'); /* Path to your background image */
+    background-size: cover;
+    background-position: center;
+}
+.container-fluid {
+    height: 100vh; /* Set height to 100% of viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Login {
+    width: 300px; /* Adjust width as needed */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8); 
+}
+
+.form-horizontal {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group .text-center {
+    text-align: center;
+}
+
+.form-control {
+    width: 100%;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 15px;
+    background: green;
+}
+
+.btn-large {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.Login h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
