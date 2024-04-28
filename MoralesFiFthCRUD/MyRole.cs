@@ -43,7 +43,7 @@ namespace MoralesFiFthCRUD
 
         public override string[] GetAllRoles()
         {
-             using (var db = new database1Entities())
+             using (var db = new database2Entities())
             {
                 return db.vw_UserRole.Select(m => m.roleName).ToArray();
             }
@@ -51,7 +51,7 @@ namespace MoralesFiFthCRUD
 
         public override string[] GetRolesForUser(string username)
         {
-            using (var db = new database1Entities())
+            using (var db = new database2Entities())
             {
                 return db.vw_UserRole.Where(m => m.username == username).Select(m => m.roleName).ToArray();
             }

@@ -14,8 +14,9 @@ namespace MoralesFiFthCRUD.Contracts
 
     public enum UserRole
     {
-        Tutor,
-        Client
+        Admin,
+        Seller,
+        Buyer
     }
     public class User
     {

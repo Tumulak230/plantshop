@@ -34,13 +34,18 @@ namespace MoralesFiFthCRUD.Controllers
         [HttpPost]
         public ActionResult Login(User u)
         {
-            var user = _userRepo._table.Where(m => m.username == u.username).FirstOrDefault();
-            if (user != null)
+            // Retrieve user from repository based on username
+            var user = _userRepo._table.FirstOrDefault(m => m.username == u.username);
+
+            // Check if user exists and password is correct
+            if (user != null && user.password == u.password)
             {
                 FormsAuthentication.SetAuthCookie(u.username, false);
-                return RedirectToAction("Dashboard");
+                return RedirectToAction("Shop"); 
             }
-            ModelState.AddModelError("", "User not Exist or Incorrect Password");
+
+            // If username or password is incorrect, display error message
+            ModelState.AddModelError("", "Invalid username or password");
 
             return View(u);
         }
@@ -88,7 +93,7 @@ namespace MoralesFiFthCRUD.Controllers
 
             _userRole.Create(userRole);
 
-            TempData["Msg"] = $"User {u.username} added!";
+            TempData["SuccessMsg"] = $"User {u.username} added!";
             return RedirectToAction("LandingPage");
         }
         [Authorize(Roles = "Tutor")]
@@ -143,15 +148,56 @@ namespace MoralesFiFthCRUD.Controllers
         {
             return View();
         }
-        public ActionResult Shop()
+        public ActionResult SignUp()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult SignUp(User u, string SelectedRole)
+        {
+            _userRepo.Create(u);
+
+            var userAdded = _userRepo._table.FirstOrDefault(m => m.username == u.username);
+
+            if (userAdded == null)
+            {
+                // Handle case where user creation failed
+                ModelState.AddModelError("", "Failed to create user.");
+                return View(u); // Redisplay the form with an error message
+            }
+
+            if (string.IsNullOrEmpty(SelectedRole))
+            {
+                // Handle case where role is not selected
+                ModelState.AddModelError("", "Role not selected.");
+                return View(u); // Redisplay the form with an error message
+            }
+
+            var role = _db.Role.FirstOrDefault(r => r.roleName == SelectedRole);
+
+            if (role == null)
+            {
+                // Handle case where role is not found (invalid selection)
+                ModelState.AddModelError("", "Invalid role selected.");
+                return View(u); // Redisplay the form with an error message
+            }
+
+            var userRole = new UserRole
+            {
+                userId = userAdded.id,
+                roleId = role.id // Assign the retrieved roleId
+            };
+
+            _userRole.Create(userRole);
+
+            TempData["SuccessMsg"] = $"User {u.username} added!";
+            return RedirectToAction("LandingPage");
         }
         public ActionResult Blog()
         {
             return View();
         }
-        public ActionResult SignUp()
+        public ActionResult Shop()
         {
             return View();
         }

@@ -14,7 +14,7 @@ namespace MoralesFiFthCRUD.Repository
         public DbSet<T> _table;
         public BaseRepository()
         {
-            _db = new database1Entities();
+            _db = new database2Entities();
             _table = _db.Set<T>();
         }
         public T Get(object id)
